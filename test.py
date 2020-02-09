@@ -1,17 +1,12 @@
 
-#%%
-msg = "hey ppl"
-print(msg)
+# %%
+import requests
+endpoint = r'https://api.tdameritrade.com/v1/marketdata/{}/quotes'.format('maxr')
 
-import matplotlib.pyplot as plt
-import numpy as np
+payload = { 'apikey' :'YZDGQZLHYMYP9KZBLWYC6EWLMTGKQ4AF'}
 
-x = np.linspace(0, 20, 100)  # Create a list of evenly-spaced numbers over the range
-plt.plot(x, np.sin(x))       # Plot the sine of each x point
-plt.show()                   # Display the plot'
-
-
-
+content = requests.get(url = endpoint, params = payload)
+data=content.json()
+data
 
 # %%
-import request.txt 
